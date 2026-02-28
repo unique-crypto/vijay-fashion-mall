@@ -1,0 +1,32 @@
+/* ================= THEME VARIABLES ================= */
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --nav-bg: #ffffff;
+    --accent-color: #D4AF37;
+}
+
+body.dark-mode {
+    --bg-color: #111111;
+    --text-color: #ffffff;
+    --nav-bg: #111111;
+}
+.navbar {
+    background: var(--nav-bg);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}

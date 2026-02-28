@@ -1,13 +1,40 @@
-*{
+/* ================= GLOBAL RESET ================= */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* ===== Loader Page Styling ===== */
+
+/* ================= THEME VARIABLES ================= */
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --nav-bg: #ffffff;
+    --hero-bg: linear-gradient(to right, #ffffff, #f2f2f2);
+    --accent-color: #A8915D;
+}
+
+body.dark-mode {
+    --bg-color: #12100D;
+    --text-color: #ffffff;
+    --nav-bg: #111111;
+    --hero-bg: linear-gradient(to right, #111, #333);
+}
+
+/* ================= BODY ================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s ease;
+}
+
+/* ================= LOADER PAGE ================= */
+
 .loader-body {
-    margin: 0;
-    padding: 0;
-    /* background: #111; */
     background-color: #12100D;
     display: flex;
     justify-content: center;
@@ -17,38 +44,33 @@
 
 .loader-container {
     text-align: center;
-    /* container fade isn't needed since children animate; keeping for fallback */
     animation: fadeIn 2s ease-in-out;
+    padding: 20px;
 }
 
 .logo {
     width: 400px;
     max-width: 80%;
     animation: zoomIn 2s ease-in-out;
-    /* border-radius: 50%; */
 }
 
 .loader-container h1 {
-    /* color: #D4AF37; */
-    color: #A8915D;
-    font-family: 'Arial', sans-serif;
+    color: var(--accent-color);
     margin-top: 15px;
     line-height: 1.2;
-    font-size: 1.25rem;        /* base size for small screens */
-    letter-spacing: 0.05rem;   /* subtle spacing */
-    max-width: 90%;           /* prevent wrap overflow */
+    font-size: 1.25rem;
+    letter-spacing: 0.05rem;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
     word-break: break-word;
-    /* ensure heading animates along with logo so they appear together */
     animation: zoomIn 2s ease-in-out;
 }
 
-/* scale the heading using viewport units for smooth resizing */
 /* ================= NAVBAR ================= */
 
 .navbar {
-    background: #111;
+    background: var(--nav-bg);
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -67,18 +89,18 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #A8915D;
-    font-weight: bold;
-    font-size: 18px;
 }
 
 .nav-logo img {
     width: 70px;
 }
+
 .nav-logo span {
     font-size: 20px;
-    color: #A8915D;
+    font-weight: bold;
+    color: var(--accent-color);
 }
+
 .nav-links {
     display: flex;
     gap: 25px;
@@ -86,13 +108,14 @@
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
     font-size: 15px;
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #A8915D;
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 .nav-actions {
@@ -104,15 +127,17 @@
 #darkModeToggle {
     background: none;
     border: none;
-    color: white;
+    color: var(--text-color);
     font-size: 18px;
     cursor: pointer;
 }
 
+/* ================= HAMBURGER ================= */
+
 .hamburger {
     display: none;
-    font-size: 22px;
-    color: white;
+    font-size: 24px;
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -120,12 +145,12 @@
 
 .hero {
     height: 90vh;
-    background: linear-gradient(to right, #111, #333);
+    background: var(--hero-bg);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    padding: 20px;
 }
 
 .hero-content h1 {
@@ -140,7 +165,7 @@
 
 .hero-btn {
     padding: 12px 25px;
-    background: #A8915D;
+    background: var(--accent-color);
     color: black;
     text-decoration: none;
     font-weight: bold;
@@ -149,13 +174,15 @@
 }
 
 .hero-btn:hover {
-    background: white;
+    background: var(--text-color);
+    color: var(--bg-color);
 }
 
-/* Animations */
+/* ================= ANIMATIONS ================= */
+
 @keyframes zoomIn {
     from {
-        transform: scale(0.5);
+        transform: scale(0.6);
         opacity: 0;
     }
     to {
@@ -165,48 +192,32 @@
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
-@media (min-width: 768px) {
-    .logo {
-        max-width: 320px;
-    }
 
-    .loader-container h1 {
-        font-size: 1.75rem;
-    }
-   
-}
-/* ===== Desktop Screens ===== */
-@media (min-width: 1080px) {
-    .logo {
-        max-width: 300px;
-    }
+/* ================= RESPONSIVE ================= */
 
-    .loader-container h1 {
-        font-size: 2rem;
-        letter-spacing: 0.2rem;
-    }
-}
 @media (max-width: 767px) {
-      .loader-container h1 {
+
+    .logo {
+        max-width: 280px;
+    }
+
+    .loader-container h1 {
         font-size: 4vw;
-   }
-   
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
-        background: #111;
+        background: var(--nav-bg);
         position: absolute;
-        top: 70px;
+        top: 75px;
         right: 20px;
         padding: 20px;
-        border-radius: 5px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
     .nav-links.active {
@@ -224,5 +235,11 @@
     .hero-content p {
         font-size: 16px;
     }
+}
 
- }
+@media (min-width: 1080px) {
+    .loader-container h1 {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
+}
