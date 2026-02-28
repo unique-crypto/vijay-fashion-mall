@@ -14,7 +14,7 @@ const toggleButton = document.getElementById("darkModeToggle");
 // Load saved theme
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
-    if (toggleButton) toggleButton.textContent = "☀";
+    if (toggleButton) toggleButton.textContent = "☀️";
 }
 
 if (toggleButton) {
@@ -23,7 +23,7 @@ if (toggleButton) {
 
         if (document.body.classList.contains("dark-mode")) {
             localStorage.setItem("theme", "dark");
-            toggleButton.textContent = "☀";
+            toggleButton.textContent = "☀️";
         } else {
             localStorage.setItem("theme", "light");
             toggleButton.textContent = "🌙";

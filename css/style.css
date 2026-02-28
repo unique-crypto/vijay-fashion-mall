@@ -111,8 +111,21 @@ body {
     color: var(--text-color);
     font-size: 15px;
     transition: 0.3s;
+    
 }
-
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #A8915D;
+    transition: width 0.3s ease-in-out;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
 .nav-links a:hover {
     color: var(--accent-color);
     text-decoration: underline;
