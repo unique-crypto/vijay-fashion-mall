@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/logo.jpeg" type="image/x-icon">
 </head>
-<body class="loader-body">
+<body class="loader-body" onload="homenavigate()">
 
     <div class="loader-container">
         <img src="images/logo.jpeg" alt="Vijay Fashion Mall Logo" class="logo">
         <h1>Look good, Feel good, Do good</h1>
     </div>
 
-    <script src="js/main.js"></script>
+    <script >
+        setTimeout(function() {
+           window.location.href = "home.html";
+         }, 3000);
+    </script>
 </body>
 </html>
