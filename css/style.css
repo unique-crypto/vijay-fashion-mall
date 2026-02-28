@@ -17,11 +17,12 @@
 
 .loader-container {
     text-align: center;
+    /* container fade isn't needed since children animate; keeping for fallback */
     animation: fadeIn 2s ease-in-out;
 }
 
 .logo {
-    width: 200px;
+    width: 400px;
     max-width: 80%;
     animation: zoomIn 2s ease-in-out;
     /* border-radius: 50%; */
@@ -32,7 +33,22 @@
     color: #A8915D;
     font-family: 'Arial', sans-serif;
     margin-top: 15px;
-    letter-spacing: 2px;
+    line-height: 1.2;
+    font-size: 1.25rem;        /* base size for small screens */
+    letter-spacing: 0.05rem;   /* subtle spacing */
+    max-width: 90%;           /* prevent wrap overflow */
+    margin-left: auto;
+    margin-right: auto;
+    word-break: break-word;
+    /* ensure heading animates along with logo so they appear together */
+    animation: zoomIn 2s ease-in-out;
+}
+
+/* scale the heading using viewport units for smooth resizing */
+@media (max-width: 767px) {
+    .loader-container h1 {
+        font-size: 4vw;
+    }
 }
 
 /* Animations */
@@ -55,15 +71,24 @@
         opacity: 1;
     }
 }
-@media (max-width: 768px) {
-
+@media (min-width: 768px) {
     .logo {
-        width: 180px;   /* Slightly smaller but still strong */
+        max-width: 320px;
     }
 
     .loader-container h1 {
-        font-size: 24px;
-        letter-spacing: 2px;
+        font-size: 1.75rem;
+    }
+}
+
+/* ===== Desktop Screens ===== */
+@media (min-width: 1080px) {
+    .logo {
+        max-width: 300px;
     }
 
+    .loader-container h1 {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
 }
