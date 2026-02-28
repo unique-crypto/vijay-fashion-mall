@@ -21,7 +21,8 @@
 }
 
 .logo {
-    width: 150px;
+    width: 200px;
+    max-width: 80%;
     animation: zoomIn 2s ease-in-out;
     /* border-radius: 50%; */
 }
@@ -53,4 +54,16 @@
     to {
         opacity: 1;
     }
+}
+@media (max-width: 768px) {
+
+    .logo {
+        width: 180px;   /* Slightly smaller but still strong */
+    }
+
+    .loader-container h1 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
 }
