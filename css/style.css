@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ===== Loader Page Styling ===== */
+.loader-body {
+    margin: 0;
+    padding: 0;
+    /* background: #111; */
+    background-color: #12100D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loader-container {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.logo {
+    width: 150px;
+    animation: zoomIn 2s ease-in-out;
+    /* border-radius: 50%; */
+}
+
+.loader-container h1 {
+    /* color: #D4AF37; */
+    color: #A8915D;
+    font-family: 'Arial', sans-serif;
+    margin-top: 15px;
+    letter-spacing: 2px;
+}
+
+/* Animations */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
