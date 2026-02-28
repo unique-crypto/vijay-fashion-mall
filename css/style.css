@@ -180,8 +180,27 @@
     .loader-container h1 {
         font-size: 1.75rem;
     }
-    @media (max-width: 768px) {
+   
+}
+ @media (max-width: 768px) {
 
+}
+/* ===== Desktop Screens ===== */
+@media (min-width: 1080px) {
+    .logo {
+        max-width: 300px;
+    }
+
+    .loader-container h1 {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
+}
+@media (max-width: 767px) {
+      .loader-container h1 {
+        font-size: 4vw;
+   }
+   
     .nav-links {
         display: none;
         flex-direction: column;
@@ -209,22 +228,4 @@
         font-size: 16px;
     }
 
-}
-}
-
-/* ===== Desktop Screens ===== */
-@media (min-width: 1080px) {
-    .logo {
-        max-width: 300px;
-    }
-
-    .loader-container h1 {
-        font-size: 2rem;
-        letter-spacing: 0.2rem;
-    }
-}
-@media (max-width: 767px) {
-      .loader-container h1 {
-        font-size: 4vw;
-   }
  }
